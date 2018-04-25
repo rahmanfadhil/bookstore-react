@@ -10,7 +10,8 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  DropdownItem,
+  Button } from 'reactstrap';
 
 class Header extends Component {
   constructor(props) {
@@ -35,21 +36,21 @@ class Header extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="#">Books</NavLink>
+                <NavLink href="/books">Books</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Authors</NavLink>
+                <NavLink href="/authors">Authors</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                  Member Area
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    Option 1
+                    Log In
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
+                    Log Out
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>

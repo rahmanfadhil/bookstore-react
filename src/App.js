@@ -1,30 +1,28 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Header from './components/Navbar';
+import Header from './components/Header';
 import Hero from './components/Hero';
-import Item from './components/Item';
+
+import Home from './pages/Home';
+import Books from './pages/Books';
+import Authors from './pages/Authors';
+import NotFound from './pages/NotFound';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <Hero />
-        <Container>
-          <Row>
-            <Col><Item /></Col>
-            <Col><Item /></Col>
-            <Col><Item /></Col>
-          </Row>
-          <br/>
-          <Row>
-            <Col><Item /></Col>
-            <Col><Item /></Col>
-            <Col><Item /></Col>
-          </Row>
-        </Container>
-      </div>
+      <Router>
+        <div>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/books" component={Books}/>
+            <Route path="/authors" component={Authors}/>
+            <Route component={NotFound}/>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
