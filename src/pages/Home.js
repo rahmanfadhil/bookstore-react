@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import { Container } from 'reactstrap';
 import Hero from '../components/Hero';
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <Container>
         <Hero />
-      </div>
+      </Container>
     )
   }
 }
