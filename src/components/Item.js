@@ -8,10 +8,13 @@ const Item = (props) => {
       <Card style={{ width: '250px', marginTop: 10 }}>
         <CardImg top width="50%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
         <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button color="info">Button</Button>
+          <CardTitle>Learn Javascript</CardTitle>
+          <CardSubtitle>Rp100.000</CardSubtitle><br/>
+          <CardText>This is a short description of this book</CardText>
+          <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <Button color="info">More</Button>
+            <Button color="success">Add To Cart</Button>
+          </div>
         </CardBody>
       </Card>
     </div>
