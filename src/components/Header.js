@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink as NavLinkRouter } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -7,10 +8,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  Button, Form, FormGroup, Input } from 'reactstrap';
 
 class Header extends Component {
   constructor(props) {
@@ -35,31 +33,25 @@ class Header extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/">Home</NavLink>
+                <NavLink tag={NavLinkRouter} exact to="/" activeClassName="active">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/books">Books</NavLink>
+                <NavLink tag={NavLinkRouter} to="/books" activeClassName="active">Books</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/authors">Authors</NavLink>
+                <NavLink tag={NavLinkRouter} to="/authors" activeClassName="active">Authors</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Member Area
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Log In
-                  </DropdownItem>
-                  <DropdownItem>
-                    Log Out
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+
+              <Form inline>
+                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                  <Input type="email" name="email" id="exampleEmail" placeholder="Your Email" />
+                </FormGroup>
+                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                  <Input type="password" name="password" id="examplePassword" placeholder="Your Password" />
+                </FormGroup>
+                <Button color="success">Submit</Button>
+              </Form>
+
             </Nav>
           </Collapse>
         </Navbar>
