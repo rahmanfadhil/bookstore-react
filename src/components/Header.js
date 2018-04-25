@@ -10,8 +10,7 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
-  Button } from 'reactstrap';
+  DropdownItem } from 'reactstrap';
 
 class Header extends Component {
   constructor(props) {
